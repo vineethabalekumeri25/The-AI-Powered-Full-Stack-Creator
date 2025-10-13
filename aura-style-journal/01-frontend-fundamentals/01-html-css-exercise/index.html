@@ -76,6 +76,43 @@
       margin-top: 0;
       margin-bottom: 24px;
     }
+
+    /* New section for stats like Debut Year and Status */
+    .stats-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+        border-top: 1px solid #374151;
+        border-bottom: 1px solid #374151;
+    }
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* This centers the items horizontally */
+    }
+    .stat-item .label {
+        font-size: 0.8rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+        margin-bottom: 4px; /* Added small margin for spacing */
+    }
+    .stat-item .value {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    .status-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #10B981; /* Green color for text */
+        background-color: rgba(16, 185, 129, 0.1); /* Light green background */
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
     
     .bio {
       font-size: 1rem;
@@ -111,7 +148,7 @@
       color: #ffffff;
     }
     .btn.social-link:hover {
-      background-color: #ee1380;
+      background-color: #d61172;
       transform: scale(1.05);
     }
 
@@ -156,7 +193,7 @@
     }
 
     .more-info h2 {
-      color: #d63452;
+      color: #ee1380;
       margin-top: 0;
       margin-bottom: 12px;
       font-size: 1.1rem;
@@ -183,6 +220,19 @@
       <img src="jennie-kim.jpg" alt="Profile picture of Jennie Kim">
       <h1 class="idol-name">Jennie Kim</h1>
       <p class="group-info"><span>BLACKPINK</span></p>
+
+      <!-- New Stats Section -->
+      <div class="stats-container">
+        <div class="stat-item">
+            <span class="label">Debut Year</span>
+            <span class="value">2016</span>
+        </div>
+        <div class="stat-item">
+            <span class="label">Status</span>
+            <span class="value status-badge">Active</span>
+        </div>
+      </div>
+
       <p class="bio">Main rapper of BLACKPINK and solo artist. Fashion icon and performer.</p>
 
       <div class="button-container">
@@ -206,7 +256,6 @@
         <ul>
           <li>Fluent in Korean and English</li>
           <li>Known as "Human Chanel" for her fashion sense</li>
-          <li>Trained for 5 years and 11 months before debut</li>
         </ul>
       </div>
 
