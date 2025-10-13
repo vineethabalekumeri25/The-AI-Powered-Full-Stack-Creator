@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-Pop Idol Profile: Jennie Kim</title>
+
+  <!-- This is an internal style sheet -->
+  <style>
+    body {
+      background-color: #111827; /* Dark blue-gray background */
+      color: #d1d5db; /* Light gray text */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+
+      /* Using Flexbox to center the main content */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* New container for the title and card */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem; /* Space between title and card */
+    }
+
+    /* New stylish heading */
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      /* Gradient text effect */
+      background: linear-gradient(90deg, #FF6F00, #E91E63, #c738bd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-align: center;
+    }
+
+    .profile-card {
+      background-color: #1f2937; /* A slightly lighter dark shade for the card */
+      border-radius: 16px;
+      padding: 40px;
+      margin: 0; /* Removed margin as main-content handles spacing */
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border: 2px solid #ee1380;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ee1380; 
+      margin-bottom: 20px;
+    }
+
+    .idol-name {
+      color: #ffffff;
+      font-size: 2.25rem;
+      margin: 0 0 8px 0;
+    }
+
+    .group-info {
+      color: #9ca3af;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+    
+    .bio {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Container for the two buttons */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 16px; /* Space between buttons */
+    }
+
+    /* Base styles for both buttons */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+    
+    /* Primary button for Instagram */
+    .btn.social-link {
+      background-color: #ee1380;
+      color: #ffffff;
+    }
+    .btn.social-link:hover {
+      background-color: #ee1380;
+      transform: scale(1.05);
+    }
+
+    /* Secondary button for "Know More" */
+    .btn.know-more-btn {
+      background-color: transparent;
+      color: #ee1380;
+      border: 2px solid #ee1380;
+      padding: 8px 18px; /* Slightly smaller padding */
+    }
+    .btn.know-more-btn:hover {
+      background-color: #ee1380;
+      color: #ffffff;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+    .arrow.up {
+      transform: rotate(180deg);
+    }
+
+    /* Hidden section for more details */
+    .more-info {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      text-align: left;
+      transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out, padding-top 0.5s ease-in-out;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    /* Class to make the hidden section visible */
+    .more-info.visible {
+      max-height: 500px; /* Adjust as needed */
+      opacity: 1;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #4b5563;
+    }
+
+    .more-info h2 {
+      color: #d63452;
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .more-info ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style-type: '★ ';
+    }
+
+    .more-info li {
+      margin-bottom: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <h1 class="page-title">K-Pop Idol Profile</h1>
+    <div class="profile-card">
+
+      <img src="jennie-kim.jpg" alt="Profile picture of Jennie Kim">
+      <h1 class="idol-name">Jennie Kim</h1>
+      <p class="group-info"><span>BLACKPINK</span></p>
+      <p class="bio">Main rapper of BLACKPINK and solo artist. Fashion icon and performer.</p>
+
+      <div class="button-container">
+        <a class="btn social-link" href="https://www.instagram.com/jennierubyjane/" target="_blank">View Instagram</a>
+        <button id="know-more-toggle" class="btn know-more-btn">
+          <span>Know More</span>
+          <span class="arrow">&rarr;</span>
+        </button>
+      </div>
+
+      <!-- Hidden information that appears on click -->
+      <div id="more-info" class="more-info">
+        <h2>Major Achievements</h2>
+        <ul>
+          <li>First K-pop female soloist to hit 1B views on YouTube</li>
+          <li>Chanel global ambassador</li>
+          <li>Solo debut "SOLO" was a massive hit</li>
+        </ul>
+        <br>
+        <h2>Fun Facts</h2>
+        <ul>
+          <li>Fluent in Korean and English</li>
+          <li>Known as "Human Chanel" for her fashion sense</li>
+          <li>Trained for 5 years and 11 months before debut</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript to handle the click event -->
+  <script>
+    const toggleBtn = document.getElementById('know-more-toggle');
+    const moreInfoDiv = document.getElementById('more-info');
+
+    toggleBtn.addEventListener('click', () => {
+      // Toggle the 'visible' class to show/hide the div
+      moreInfoDiv.classList.toggle('visible');
+
+      // Check if the div is now visible and update the button text/arrow
+      const isVisible = moreInfoDiv.classList.contains('visible');
+      const arrow = toggleBtn.querySelector('.arrow');
+
+      if (isVisible) {
+        toggleBtn.querySelector('span').textContent = 'Show Less';
+        arrow.innerHTML = '&uarr;'; // Up arrow
+      } else {
+        toggleBtn.querySelector('span').textContent = 'Know More';
+        arrow.innerHTML = '&rarr;'; // Right arrow
+      }
+    });
+  </script>
+
+</body>
+</html>
+
