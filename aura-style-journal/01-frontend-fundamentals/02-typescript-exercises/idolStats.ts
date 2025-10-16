@@ -14,7 +14,6 @@ console.log("\n");
 
 
 // --- Step 2, Task 3: Creative Exercise (Adapted to Idol Theme) ---
-// Instead of a MakeupPalette, we'll create an interface for our Idol.
 // This is a more direct bridge to building the React component in Step 3.
 // It defines the "shape" of an idol object.
 
